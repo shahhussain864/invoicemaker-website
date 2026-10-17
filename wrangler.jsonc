@@ -1,8 +1,13 @@
 // The Invoice Maker website: static files only, served by Cloudflare as a Worker with static assets.
-// Cloudflare's Git integration deploys this folder (root directory "website") on every push.
+// Cloudflare's Git integration deploys this repository on every push to main.
 {
   "name": "invoicemaker-website",
   "compatibility_date": "2026-10-01",
+  // The site's own domain. Cloudflare creates the DNS records and certificates on deploy.
+  "routes": [
+    { "pattern": "billingpos.app", "custom_domain": true },
+    { "pattern": "www.billingpos.app", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./public",
     "not_found_handling": "404-page",
