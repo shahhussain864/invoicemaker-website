@@ -176,6 +176,14 @@ section.alt { background: var(--bg-alt); }
 .plan .tag { position: absolute; top: -13px; right: 24px; background: var(--accent); color: var(--on-accent); font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 999px; }
 .plan h3 { font-size: 22px; }
 .plan .sub { color: var(--muted); margin: 4px 0 22px; font-size: 15px; }
+.price { display: flex; align-items: baseline; gap: 6px; margin: 10px 0 6px; }
+.price strong { font-size: 40px; letter-spacing: -0.03em; line-height: 1; }
+.price span { color: var(--muted); font-size: 15px; }
+.price-options { display: grid; gap: 6px; margin: 12px 0 4px; }
+.price-options div { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; font-size: 14px; }
+.price-options span { flex: 1; color: var(--muted); }
+.price-options em { font-style: normal; font-size: 12px; font-weight: 700; color: var(--accent); background: var(--accent-tint); padding: 2px 8px; border-radius: 999px; }
+.price-note { text-align: center; color: var(--muted); font-size: 14px; margin-top: 24px; }
 .plan ul { list-style: none; display: grid; gap: 12px; }
 .plan li { display: flex; gap: 10px; font-size: 15px; }
 .plan li svg.i { width: 20px; height: 20px; color: var(--accent); margin-top: 2px; }
