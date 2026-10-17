@@ -53,7 +53,7 @@
       <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-primary btn-small js-download" href="#download">Download</a>
+      <a class="btn btn-primary btn-small js-download" href="#download"><span data-live="Download">Coming soon</span></a>
     </nav>
   </div>
 </header>
@@ -66,7 +66,7 @@
         <h1>Simple <em>billing software</em> for your shop</h1>
         <p class="lead">Make invoices and bills, manage inventory, cash, bank accounts and cheques, and see your profit in clear reports — on your Windows PC, with or without the internet.</p>
         <div class="actions">
-          <a class="btn btn-primary js-download" href="#download"><svg class="i"><use href="#i-download"/></svg>Download for Windows</a>
+          <a class="btn btn-primary js-download" href="#download"><svg class="i"><use href="#i-download"/></svg>Download for Windows <span class="soon">Coming soon</span></a>
           <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.billing.invoicemaker" target="_blank" rel="noopener"><svg class="i"><use href="#i-phone"/></svg>Android app</a>
         </div>
         <ul class="trust">
@@ -219,7 +219,7 @@
         <details><summary>Does it work without the internet?</summary><p>Yes. Everything works offline. The internet is only needed for Cloud Sync and buying Premium.</p></details>
         <details><summary>Is my data safe?</summary><p>Your data is kept in an encrypted database on your own computer. With Cloud Sync on, it is also stored in your account so your other devices can reach it.</p></details>
         <details><summary>I already use Invoice Maker on my phone. Can I use my data?</summary><p>Yes. Either sign in with Cloud Sync (Premium) to keep both in sync, or open a backup from your phone on the PC.</p></details>
-        <details><summary>How do I install it?</summary><p>Download the installer, double-click it and follow the steps. No administrator rights are needed. New versions install over the old one and keep your data.</p></details>
+        <details><summary>How do I install it?</summary><p>Download the installer, double-click it and follow the steps. No administrator rights are needed. New versions install over the old one and keep your data. <span data-live="">The Windows installer is coming soon.</span></p></details>
       </div>
     </div>
   </section>
@@ -227,10 +227,10 @@
   <div class="cta" id="download">
     <div class="container">
       <div>
-        <h2>Download the billing software for Windows</h2>
-        <p>Free download · Free plan · Windows 10 and 11 (64-bit)</p>
+        <h2 data-live="Download the billing software for Windows">Billing software for Windows — coming soon</h2>
+        <p data-live="Free download · Free plan · Windows 10 and 11 (64-bit)">Free plan · Windows 10 and 11 (64-bit) · Available on Android today</p>
       </div>
-      <a class="btn btn-primary js-download" href="#download"><svg class="i"><use href="#i-download"/></svg>Download installer (.msi)</a>
+      <a class="btn btn-primary js-download" href="#download"><svg class="i"><use href="#i-download"/></svg>Download installer (.msi) <span class="soon">Coming soon</span></a>
     </div>
   </div>
 </main>
@@ -249,13 +249,37 @@
   </div>
 </footer>
 
+<dialog id="soon-dialog" class="soon-dialog" aria-labelledby="soon-title">
+  <form method="dialog" class="soon-box">
+    <button class="soon-x" aria-label="Close">×</button>
+    <span class="badge">Coming soon</span>
+    <h2 id="soon-title">Windows version coming soon</h2>
+    <p>We're finishing the Windows installer. Meanwhile you can use Invoice Maker on Android, or ask us to email you when the Windows version is ready.</p>
+    <div class="soon-actions">
+      <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.billing.invoicemaker" target="_blank" rel="noopener"><svg class="i"><use href="#i-phone"/></svg>Get the Android app</a>
+      <a class="btn btn-outline" href="mailto:shahhussain3435365@gmail.com?subject=Notify%20me%3A%20Invoice%20Maker%20for%20Windows&amp;body=Please%20email%20me%20when%20Invoice%20Maker%20for%20Windows%20is%20ready.">Email me when it's ready</a>
+    </div>
+  </form>
+</dialog>
+
 <script>
-  // Where the Download buttons go. Set this to the installer's URL (a GitHub Release or an R2 file);
-  // while it is empty the buttons just scroll to the download section.
+  // Where the Download buttons go. Set this to the installer's URL (a GitHub Release or an R2 file)
+  // to launch: the buttons then download it, the "Coming soon" pills go, and every [data-live]
+  // element shows its launch text. While it is empty the buttons open the "coming soon" dialog.
   var DOWNLOAD_URL = "";
 
+  var buttons = document.querySelectorAll(".js-download");
   if (DOWNLOAD_URL) {
-    document.querySelectorAll(".js-download").forEach(function (a) { a.href = DOWNLOAD_URL; });
+    buttons.forEach(function (a) { a.href = DOWNLOAD_URL; });
+    document.querySelectorAll(".soon").forEach(function (el) { el.remove(); });
+    document.querySelectorAll("[data-live]").forEach(function (el) { el.textContent = el.dataset.live; });
+  } else {
+    var dialog = document.getElementById("soon-dialog");
+    buttons.forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); dialog.showModal(); });
+    });
+    // A click on the backdrop (outside the box) closes it, as Esc does.
+    dialog.addEventListener("click", function (e) { if (e.target === dialog) dialog.close(); });
   }
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
