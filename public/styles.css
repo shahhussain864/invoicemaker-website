@@ -252,3 +252,10 @@ footer nav a:hover { color: var(--text); }
 .legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
 .legal th { background: var(--bg-alt); font-weight: 600; }
 .legal tr:last-child td { border-bottom: 0; }
+
+/* Checkout (Paddle's default payment link) */
+.checkout { padding: 88px 0; }
+.checkout .container { max-width: 620px; }
+.checkout p { color: var(--muted); }
+.checkout #missing .btn { margin-top: 4px; }
+.checkout .fine { font-size: 13px; margin-top: 40px; }

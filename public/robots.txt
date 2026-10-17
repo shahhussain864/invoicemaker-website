@@ -1,2 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /checkout
+
+Sitemap: https://billingpos.app/sitemap.xml

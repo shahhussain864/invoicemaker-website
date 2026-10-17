@@ -15,7 +15,7 @@ Preview: open `public/index.html` in a browser, or run `npx wrangler dev` in thi
 1. Cloudflare dashboard → **Workers & Pages** → **Create** → **Import a repository** → pick this repo.
 2. Production branch: `main`. Root directory: leave empty.
    Build command: leave empty. Deploy command: `npx wrangler deploy`.
-3. Save and deploy. The site goes live at `https://invoicemaker-website.<your-subdomain>.workers.dev`.
+3. Save and deploy. The site goes live at `https://invoicemaker-website.<your-subdomain>.workers.dev`; its own domain is **billingpos.app** (Settings → Domains & Routes).
 
 After that, every push to the branch redeploys the site. To use your own domain later: the Worker's
 **Settings → Domains & Routes → Add → Custom domain**.

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Premium — Invoice Maker</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#4f7cd6">
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/styles.css">
+  <!--
+    Paddle's "default payment link". The desktop app asks the paddle-checkout edge function for a
+    checkout; Paddle sends the buyer here with ?_ptxn=<transaction id>, and Paddle.js opens that
+    transaction's checkout by itself. The purchase reaches the app through the paddle-webhook
+    edge function, not through this page.
+
+    PADDLE_ENV and PADDLE_CLIENT_TOKEN must match the edge functions' PADDLE_ENV (sandbox/live).
+    A client-side token is public by design (it can only open checkouts).
+  -->
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="container">
+    <a class="brand" href="/"><img src="/images/logo.png" alt=""><span>Invoice Maker<small>Billing Software</small></span></a>
+  </div>
+</header>
+
+<main class="page checkout">
+  <div class="container">
+    <div class="code">Secure checkout by Paddle</div>
+    <h1>Invoice Maker Premium</h1>
+
+    <div id="loading">
+      <p>Opening checkout… The payment form opens on this page in a moment.</p>
+    </div>
+
+    <div id="missing" hidden>
+      <p>Open Invoice Maker on your computer and choose <strong>Get Premium</strong>. It brings you back here with your checkout.</p>
+      <a class="btn btn-primary" href="/#pricing">See plans and prices</a>
+    </div>
+
+    <div id="done" hidden>
+      <p><strong>Payment received — thank you!</strong> Go back to Invoice Maker: Premium unlocks there by itself within a few seconds. You can close this tab.</p>
+    </div>
+
+    <p class="fine">Payments are processed by Paddle.com, our reseller and Merchant of Record. See our <a href="/terms">Terms</a>, <a href="/refund">Refund Policy</a> and <a href="/privacy">Privacy Policy</a>.</p>
+  </div>
+</main>
+
+<script>
+  var PADDLE_ENV = "sandbox";
+  var PADDLE_CLIENT_TOKEN = "test_4c0098dc72fbbde47a540e0f8d6";
+
+  function show(id) {
+    ["loading", "missing", "done"].forEach(function (block) {
+      document.getElementById(block).hidden = block !== id;
+    });
+  }
+
+  if (!new URLSearchParams(window.location.search).get("_ptxn")) {
+    show("missing");
+  } else {
+    if (PADDLE_ENV === "sandbox") Paddle.Environment.set("sandbox");
+    Paddle.Initialize({
+      token: PADDLE_CLIENT_TOKEN,
+      eventCallback: function (event) {
+        if (event.name === "checkout.loaded") document.getElementById("loading").hidden = true;
+        if (event.name === "checkout.completed") show("done");
+      },
+    });
+  }
+</script>
+</body>
+</html>
