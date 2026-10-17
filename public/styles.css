@@ -243,3 +243,12 @@ footer nav a:hover { color: var(--text); }
 .soon-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
 .soon-x { position: absolute; top: 10px; right: 12px; width: 34px; height: 34px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font-size: 24px; line-height: 1; cursor: pointer; }
 .soon-x:hover { background: var(--bg-alt); color: var(--text); }
+.legal h3 { font-size: 17px; margin: 24px 0 8px; }
+.legal h4 { font-size: 15px; margin: 18px 0 6px; }
+.legal code { font-size: 14px; background: var(--bg-alt); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
+.legal .note { background: var(--accent-tint); border-radius: 12px; padding: 16px 18px; margin: 20px 0 8px; }
+.legal .table-wrap { overflow-x: auto; margin: 12px 0; border: 1px solid var(--border); border-radius: 10px; }
+.legal table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 560px; }
+.legal th, .legal td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); }
+.legal th { background: var(--bg-alt); font-weight: 600; }
+.legal tr:last-child td { border-bottom: 0; }
