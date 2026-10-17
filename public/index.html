@@ -8,19 +8,40 @@
   <meta property="og:title" content="Invoice Maker for Windows">
   <meta property="og:description" content="Invoices, stock, cash and reports for your business — on your PC, offline, and in sync with your phone.">
   <meta property="og:image" content="/images/logo.png">
+  <meta name="theme-color" content="#059669">
   <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
+
+<!-- Line icons used across the page -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></symbol>
+  <symbol id="i-invoice" viewBox="0 0 24 24"><path d="M6 2h9l5 5v15H6z"/><path d="M14 2v6h6M9 13h7M9 17h7M9 9h2"/></symbol>
+  <symbol id="i-palette" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></symbol>
+  <symbol id="i-printer" viewBox="0 0 24 24"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h14v4"/><path d="M3 7v11a2 2 0 0 0 2 2h16V9H5a2 2 0 0 1-2-2"/><path d="M17 14.5h.01"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+  <symbol id="i-sync" viewBox="0 0 24 24"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16m0-4a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></symbol>
+  <symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="m2 2 20 20M8.5 16.5a5 5 0 0 1 7 0M5 13a10 10 0 0 1 5-2.7M19 13a10 10 0 0 0-2.3-1.6M2 8.8a15 15 0 0 1 4.2-2.6M22 8.8A15 15 0 0 0 10.7 5M12 20h.01"/></symbol>
+</svg>
 
 <header class="nav">
   <div class="container">
     <a class="brand" href="/"><img src="/images/logo.png" alt="">Invoice Maker</a>
     <nav class="nav-links">
       <a href="#features">Features</a>
+      <a href="#how">How it works</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
-      <a class="btn btn-primary btn-small" href="#download">Download</a>
+      <a class="btn btn-primary btn-small js-download" href="#download">Download</a>
     </nav>
   </div>
 </header>
@@ -28,45 +49,114 @@
 <main>
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Now on Windows</span>
-      <h1>Billing made simple,<br><span>right on your PC</span></h1>
-      <p class="lead">Create invoices and estimates, manage stock, cash, bank accounts and cheques, and see your profit — on a big screen, with or without the internet.</p>
-      <div class="actions">
-        <a class="btn btn-primary js-download" href="#download">⬇ Download for Windows</a>
-        <a class="btn btn-secondary" href="https://play.google.com/store/apps/details?id=com.billing.invoicemaker" target="_blank" rel="noopener">Get the Android app</a>
+      <div>
+        <span class="badge">New · Invoice Maker for Windows</span>
+        <h1>Invoicing and accounts for your shop, <em>on your PC</em></h1>
+        <p class="lead">Bill customers, track stock, cash, bank accounts and cheques, and see your profit — on a big screen, with or without the internet.</p>
+        <div class="actions">
+          <a class="btn btn-primary js-download" href="#download"><svg class="i"><use href="#i-download"/></svg>Download for Windows</a>
+          <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.billing.invoicemaker" target="_blank" rel="noopener"><svg class="i"><use href="#i-phone"/></svg>Android app</a>
+        </div>
+        <ul class="trust">
+          <li><svg class="i"><use href="#i-check"/></svg>Free to use</li>
+          <li><svg class="i"><use href="#i-wifi-off"/></svg>Works offline</li>
+          <li><svg class="i"><use href="#i-lock"/></svg>Encrypted on your PC</li>
+        </ul>
       </div>
-      <p class="note">Free to use · Windows 10 and 11 (64-bit)</p>
 
-      <!-- Add a screenshot at website/public/images/screenshot-dashboard.png and it shows here. -->
-      <div class="shot">
-        <img src="/images/screenshot-dashboard.png" alt="Invoice Maker dashboard on Windows" onerror="this.parentNode.remove()">
+      <!-- Save a screenshot as images/screenshot-dashboard.png and it replaces the drawn mock-up. -->
+      <div class="visual">
+        <img src="/images/screenshot-dashboard.png" alt="Invoice Maker dashboard on Windows"
+             onload="this.parentNode.classList.add('has-shot')" onerror="this.remove()">
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar"><span></span><span></span><span></span><b>Invoice Maker</b></div>
+          <div class="mock-body">
+            <div class="mock-side">
+              <div class="on">Dashboard</div><div>Transactions</div><div>Parties</div><div>Items</div><div>Cash &amp; Bank</div><div>Reports</div>
+            </div>
+            <div class="mock-main">
+              <div class="kpis">
+                <div class="kpi"><small>Sales</small><strong>248,500</strong><div class="up">▲ 12%</div></div>
+                <div class="kpi"><small>Receivable</small><strong>36,200</strong><div class="up">8 parties</div></div>
+                <div class="kpi"><small>Cash in hand</small><strong>51,940</strong><div class="up">Today</div></div>
+              </div>
+              <div class="bars"><i style="height:35%"></i><i style="height:50%"></i><i style="height:42%"></i><i style="height:65%"></i><i style="height:55%"></i><i style="height:78%"></i><i class="hi" style="height:92%"></i></div>
+              <div class="rows">
+                <div><span>INV-1042 · Ahmed Traders</span><span class="paid">Paid</span></div>
+                <div><span>INV-1041 · City Mart</span><span class="due">Due</span></div>
+                <div><span>EST-0210 · Noor Electronics</span><span>Estimate</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <div class="stats">
+    <div class="container">
+      <div class="stat"><strong>10</strong><span>invoice themes</span></div>
+      <div class="stat"><strong>17</strong><span>business reports</span></div>
+      <div class="stat"><strong>100%</strong><span>works offline</span></div>
+      <div class="stat"><strong>2</strong><span>devices, one account</span></div>
+    </div>
+  </div>
+
   <section id="features">
     <div class="container">
       <div class="section-head">
-        <h2>Everything your shop needs</h2>
-        <p>The same Invoice Maker you know from your phone, built for keyboard, mouse and a wide screen.</p>
+        <span class="eyebrow">Features</span>
+        <h2>Everything your shop needs, in one app</h2>
+        <p>The Invoice Maker you know from your phone, rebuilt for keyboard, mouse and a wide screen.</p>
       </div>
-      <div class="grid">
-        <div class="card"><div class="icon">🧾</div><h3>Invoices &amp; estimates</h3><p>Sales, purchases, returns, estimates, orders and more. Duplicate or convert one into another in a click.</p></div>
-        <div class="card"><div class="icon">🎨</div><h3>Beautiful PDF invoices</h3><p>Choose from 10 invoice themes, add your logo and signature, and save or share as PDF or image.</p></div>
-        <div class="card"><div class="icon">🖨️</div><h3>Thermal receipts</h3><p>Print receipts straight to your installed thermal printer, or print the full A4 invoice.</p></div>
-        <div class="card"><div class="icon">📦</div><h3>Parties &amp; items</h3><p>Customers, suppliers and products with categories, units, live stock and stock adjustments.</p></div>
-        <div class="card"><div class="icon">💵</div><h3>Cash, bank &amp; cheques</h3><p>Cash in hand, bank and wallet accounts, transfers, and cheques you can deposit, withdraw or reopen.</p></div>
-        <div class="card"><div class="icon">📊</div><h3>Profit &amp; Loss and reports</h3><p>Profit &amp; Loss by bill, party or item, cash flow, and 15 more reports — export to PDF or Excel.</p></div>
-        <div class="card"><div class="icon">🔒</div><h3>Private and offline</h3><p>Your data stays in an encrypted database on your computer. No account needed, no internet needed.</p></div>
-        <div class="card"><div class="icon">🔄</div><h3>Syncs with your phone</h3><p>Turn on Cloud Sync and your phone and PC stay up to date with each other automatically.</p></div>
-        <div class="card"><div class="icon">📲</div><h3>Bring your phone data</h3><p>Already using Invoice Maker on Android? Open your phone backup on the PC and carry on.</p></div>
+
+      <div class="group">
+        <div><h3>Sell &amp; bill</h3><p>Fast invoices that look professional.</p></div>
+        <div class="items">
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-invoice"/></svg></div><h4>Every transaction type</h4><p>Sales, purchases, returns, estimates and orders. Duplicate or convert one into another in a click.</p></div>
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-palette"/></svg></div><h4>10 invoice themes</h4><p>Add your logo and signature, then save or share as PDF or image.</p></div>
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-printer"/></svg></div><h4>Thermal receipts</h4><p>Print straight to your installed receipt printer, or print the full A4 invoice.</p></div>
+        </div>
       </div>
+
+      <div class="group">
+        <div><h3>Stock &amp; money</h3><p>Know what you have and where it went.</p></div>
+        <div class="items">
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-box"/></svg></div><h4>Parties &amp; items</h4><p>Customers, suppliers and products with categories, units, live stock and adjustments.</p></div>
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-wallet"/></svg></div><h4>Cash, bank &amp; cheques</h4><p>Cash in hand, bank and wallet accounts, transfers, and cheques to deposit or withdraw.</p></div>
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-chart"/></svg></div><h4>Profit &amp; Loss and reports</h4><p>P&amp;L by bill, party or item, cash flow and 15 more reports — export to PDF or Excel.</p></div>
+        </div>
+      </div>
+
+      <div class="group">
+        <div><h3>Safe &amp; connected</h3><p>Your data, on your terms.</p></div>
+        <div class="items">
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-lock"/></svg></div><h4>Private and offline</h4><p>An encrypted database on your own computer. No account or internet needed.</p></div>
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-sync"/></svg></div><h4>Syncs with your phone</h4><p>Turn on Cloud Sync and your phone and PC keep each other up to date.</p></div>
+          <div class="feature"><div class="ico"><svg class="i"><use href="#i-phone"/></svg></div><h4>Bring your phone data</h4><p>Already on Android? Open your phone backup on the PC and carry on.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="alt">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">How it works</span>
+        <h2>Up and running in minutes</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Download and install</h3><p>Run the installer. No administrator rights needed, and updates keep your data.</p></li>
+        <li><h3>Add your business</h3><p>Enter your business name and logo, or open a backup from your phone.</p></li>
+        <li><h3>Start billing</h3><p>Create your first invoice, print it or save it as PDF, and watch your reports fill in.</p></li>
+      </ol>
     </div>
   </section>
 
   <section id="pricing">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head center">
+        <span class="eyebrow">Pricing</span>
         <h2>Start free. Upgrade when you grow.</h2>
         <p>One Premium subscription works on both your phone and your PC.</p>
       </div>
@@ -75,31 +165,35 @@
           <h3>Free</h3>
           <p class="sub">Everything to run your shop on one PC.</p>
           <ul>
-            <li>All transaction types</li>
-            <li>Parties, items and stock</li>
-            <li>Cash, bank accounts and cheques</li>
-            <li>Reports and Profit &amp; Loss</li>
-            <li>PDF invoices and thermal printing</li>
+            <li><svg class="i"><use href="#i-check"/></svg>All transaction types</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Parties, items and stock</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Cash, bank accounts and cheques</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Reports and Profit &amp; Loss</li>
+            <li><svg class="i"><use href="#i-check"/></svg>PDF invoices and thermal printing</li>
           </ul>
         </div>
         <div class="plan featured">
+          <span class="tag">Phone + PC</span>
           <h3>Premium</h3>
           <p class="sub">For businesses that work on more than one device.</p>
           <ul>
-            <li>Everything in Free</li>
-            <li>Cloud Sync between phone and PC</li>
-            <li>All premium invoice themes</li>
-            <li>No "free version" badge on invoices</li>
-            <li>Buy on phone or PC — unlocks both</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Everything in Free</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Cloud Sync between phone and PC</li>
+            <li><svg class="i"><use href="#i-check"/></svg>All premium invoice themes</li>
+            <li><svg class="i"><use href="#i-check"/></svg>No "free version" badge on invoices</li>
+            <li><svg class="i"><use href="#i-check"/></svg>Buy on phone or PC — unlocks both</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="faq">
+  <section id="faq" class="alt">
     <div class="container">
-      <div class="section-head"><h2>Questions</h2></div>
+      <div class="section-head center">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions, answered</h2>
+      </div>
       <div class="faq">
         <details><summary>What do I need to run it?</summary><p>A PC with Windows 10 or Windows 11 (64-bit). Microsoft Edge (already on Windows) is used to make PDFs.</p></details>
         <details><summary>Does it work without the internet?</summary><p>Yes. Everything works offline. The internet is only needed for Cloud Sync and buying Premium.</p></details>
@@ -110,25 +204,26 @@
     </div>
   </section>
 
-  <section id="download">
+  <div class="cta" id="download">
     <div class="container">
-      <div class="cta">
+      <div>
         <h2>Get Invoice Maker for Windows</h2>
         <p>Free download · Windows 10 and 11 (64-bit)</p>
-        <a class="btn btn-primary js-download" href="#download">⬇ Download installer (.msi)</a>
       </div>
+      <a class="btn btn-primary js-download" href="#download"><svg class="i"><use href="#i-download"/></svg>Download installer (.msi)</a>
     </div>
-  </section>
+  </div>
 </main>
 
 <footer>
   <div class="container">
-    <span>© <span id="year">2026</span> Invoice Maker</span>
+    <a class="brand" href="/"><img src="/images/logo.png" alt="">Invoice Maker</a>
     <nav>
       <a href="https://staritzone.blogspot.com/2025/03/invoker-maker-privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a>
       <a href="https://invoice-maker-6246e.web.app/delete-account" target="_blank" rel="noopener">Delete account</a>
       <a href="mailto:shahhussain3435365@gmail.com">Contact</a>
     </nav>
+    <span>© <span id="year">2026</span> Invoice Maker</span>
   </div>
 </footer>
 
