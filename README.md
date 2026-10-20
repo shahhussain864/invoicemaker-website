@@ -5,8 +5,11 @@ it as a Worker with static assets (`wrangler.jsonc`).
 
 ## Edit
 - Pages: `public/index.html` (home) and `public/404.html`; styles in `public/styles.css`.
-- **Download button:** set `DOWNLOAD_URL` near the bottom of `public/index.html` to the installer's URL.
-  The MSI is too big for Cloudflare's 25 MB file limit, so host it on a GitHub Release or an R2 bucket.
+- **Download button:** on a new release, update the installer's URL and version in `public/index.html` and
+  `public/download.html`. The MSI is too big for Cloudflare's 25 MB file limit, so host it on a GitHub Release or an R2 bucket.
+- **Download page (`/download`):** the page the Android app opens and shares. Google Play doesn't allow the app
+  to lead users to prices or purchases outside Play, so keep it free of prices and buy wording, and don't link
+  it to pages that have them (home, Terms, Refund, Privacy, checkout).
 - **Screenshot:** save one as `public/images/screenshot-dashboard.png` and it shows under the hero.
 
 Preview: open `public/index.html` in a browser, or run `npx wrangler dev` in this folder.
