@@ -3,6 +3,10 @@
 {
   "name": "invoicemaker-website",
   "compatibility_date": "2026-10-01",
+  // Redirects www.billingpos.app to billingpos.app, then serves the static files below.
+  "main": "src/worker.js",
+  // No copy of the site at *.workers.dev, where Google could find it as a duplicate of billingpos.app.
+  "workers_dev": false,
   // The site's own domain. Cloudflare creates the DNS records and certificates on deploy.
   "routes": [
     { "pattern": "billingpos.app", "custom_domain": true },
@@ -10,6 +14,9 @@
   ],
   "assets": {
     "directory": "./public",
+    "binding": "ASSETS",
+    // Run the worker on every request, so the www redirect also covers pages that exist as files.
+    "run_worker_first": true,
     "not_found_handling": "404-page",
     "html_handling": "auto-trailing-slash"
   }
